@@ -1,4 +1,4 @@
-name: linux-guest-job
+name: runtime-check
 
 on:
   workflow_dispatch:
@@ -235,4 +235,4 @@ jobs:
           grep -q 'cmd exit code: 0' uml.log || { echo '::error::custom command finished with a non-zero status'; exit 1; }
           grep -q 'Power down' uml.log || { echo '::error::guest did not power down cleanly'; exit 1; }
           echo "::notice::Alpine $AVER / UML kernel $KVER finished (veth+NAT, ${MEM}M RAM, ncpus=${NCPU}, img root)"
-# sync-nonce: 9419ac8e7a36883d
+# sync-nonce: 083348902769b528
